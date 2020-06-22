@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./src/style.scss"],"names":[],"mappings":"AAAA,KAAK,SAAS,UAAU,WAAW,2DAA2D,kCAAkC,sB","file":"index.bundle.css","sourcesContent":["body{margin:0;padding:0}.bg--curve{background-image:url(05698a95740cb41f8c3c2cedd8ab273a.svg);background-position:center center;background-size:cover}"],"sourceRoot":""}

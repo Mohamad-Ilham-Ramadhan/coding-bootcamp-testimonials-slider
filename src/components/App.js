@@ -1,13 +1,14 @@
 import React, { useState } from "react";
+import bgPattern from "../images/pattern-bg.svg";
 
 export default function App() {
   return (
     <section className="container">
-      <div className="bg curve"></div>
+      <div className="bg bg--curve"></div>
 
       <article className="slider">
         <div className="slider__item">
-          <img className="slider__bg slider__bg--pattern" />
+          <img className="slider__bg slider__bg--pattern" src={bgPattern} />
           <q className="slider__quotes"></q>
           <p className="slider__author"></p>
         </div>

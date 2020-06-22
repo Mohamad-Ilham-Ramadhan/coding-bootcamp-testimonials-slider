@@ -2,3 +2,9 @@ body {
   margin: 0;
   padding: 0;
 }
+
+.bg--curve {
+  background-image: url("images/pattern-curve.svg");
+  background-position: center center;
+  background-size: cover;
+}
