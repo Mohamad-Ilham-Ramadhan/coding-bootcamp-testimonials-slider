@@ -4,8 +4,10 @@ import bgPattern from "../images/pattern-bg.svg";
 export default function App() {
   return (
     <section className="container">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste consectetur
+      aliquid dolorem vero. Harum quod nisi quae, consequatur incidunt velit
+      saepe earum impedit amet totam debitis iure nostrum, quasi sequi?
       <div className="bg bg--curve"></div>
-
       <article className="slider">
         <div className="slider__item">
           <img className="slider__bg slider__bg--pattern" src={bgPattern} />
