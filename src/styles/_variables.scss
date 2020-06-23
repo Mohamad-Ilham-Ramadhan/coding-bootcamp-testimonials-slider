@@ -1,0 +1,31 @@
+// Breakpoints:
+$mobile: 375px;
+$desktop: 1440px;
+// breakpoints__bootstrap:
+// Extra small devices (portrait phones, less than 576px)
+/* // No media query for `xs` since this is the default in Bootstrap
+
+    // Small devices (landscape phones, 576px and up)
+    @media (min-width: 576px) { ... }
+
+    // Medium devices (tablets, 768px and up)
+    @media (min-width: 768px) { ... }
+
+    // Large devices (desktops, 992px and up)
+    @media (min-width: 992px) { ... }
+
+    // Extra large devices (large desktops, 1200px and up)
+    @media (min-width: 1200px) { ... } 
+ */
+// Colors:
+$dark-blue: hsl(240, 38%, 20%);
+$grayish-blue: hsl(240, 18%, 77%);
+
+// Body copy:
+$font-size: 32px;
+
+// Fonts:
+$font-family: "Inter";
+$font-small: 300;
+$font-medium: 500;
+$font-bold: 700;

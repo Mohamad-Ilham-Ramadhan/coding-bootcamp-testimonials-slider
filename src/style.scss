@@ -1,13 +1,210 @@
 @use 'styles/fonts';
+@use 'styles/variables' as *;
+@use 'sass:color';
+
+// xs
 body {
   margin: 0;
   padding: 0;
-  font-family: "Inter";
-  font-weight: 700;
+  font-family: $font-family;
+  font-size: $font-size;
+  color: $dark-blue;
+}
+.container {
+  background-color: white;
+  background-image: url("images/pattern-curve.svg");
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
-.bg--curve {
-  background-image: url("images/pattern-curve.svg");
-  background-position: center center;
-  background-size: cover;
+.slider {
+  display: grid;
+  height: 100%;
+  grid-template-rows: [figure] 1fr [quotes] 1fr;
+  grid-template-columns: 1fr;
+  .slider__item {
+    position: relative;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .slider__item--figure {
+    grid-row: figure;
+  }
+  .slider__item--figure .slider__bg {
+    width: 100%;
+  }
+  .slider__figure {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .wrapper {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .slider__figure .slider__figure__img {
+    width: 77%;
+    border-radius: 5px;
+    box-shadow: -36px 70px 80px -80px rgba(32, 32, 70, 1);
+  }
+  .slider__controls {
+    width: 85px;
+    border-radius: 60px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background-color: white;
+    box-shadow: 0px 10px 30px -15px $dark-blue;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .slider__controls .slider__controls__btn {
+    flex: 1;
+    padding: 21px;
+    position: relative;
+    border: none;
+    outline: none;
+    background: none;
+    &:hover {
+      cursor: pointer;
+      background-color: color.scale(white, $lightness: -5%);
+      transition: 0.3s background-color;
+    }
+    &:active {
+      transition: 0s background-color;
+      background-color: color.scale(white, $lightness: -10%);
+    }
+  }
+  .slider__controls .slider__controls__btn img {
+    width: 20%;
+    // height: 30%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  // slider item quotes
+  .slider__item--quotes {
+    grid-row: quotes;
+  }
+  .slider__item--quotes .slider__bg {
+    position: absolute;
+    left: 50%;
+    top: -26px;
+    width: 65px;
+    transform: translateX(-50%);
+  }
+  .slider__quotes {
+    font-size: 20px;
+    line-height: 1.3;
+    text-align: center;
+    margin-top: 10px;
+    position: relative;
+  }
+  .slider__quotes__author {
+    font-size: 17px;
+  }
+  .slider__quotes__author .slider__quotes__author__name {
+    font-weight: 700;
+    display: block;
+  }
+  .slider__quotes__author .slider__quotes__author__occupation {
+    color: $grayish-blue;
+    font-weight: 500;
+  }
+}
+
+// sm
+@media all and (min-width: 576px) {
+  .slider {
+    .slider__item--quotes .slider__quotes {
+      font-size: $font-size;
+    }
+    .slider__item--quotes .slider__quotes .slider__quotes__author {
+      font-size: 22px;
+    }
+  }
+}
+
+@media all and (min-width: 768px) {
+  .container {
+    padding: 0 40px;
+    background-position: left 120%;
+    background-size: 60%;
+  }
+  .slider {
+    grid-template-columns: [quotes] 1fr [figure] 1fr;
+    grid-template-rows: 1fr;
+
+    .slider__item {
+      padding: 20px 0;
+    }
+
+    .slider__item--quotes .slider__quotes {
+      transform: translateX(30px);
+      text-align: left;
+      z-index: 10;
+    }
+    .slider__item--quotes .slider__bg {
+      left: 80px;
+    }
+    .slider__item--quotes .slider__quotes .slider__quotes__text {
+      font-size: 18px;
+      font-weight: 300;
+      display: block;
+      line-height: 1.5;
+      width: 115%;
+    }
+    .slider__item--quotes .slider__quotes .slider__quotes__author {
+      font-size: 14px;
+    }
+    .slider__controls {
+      left: 20%;
+      transform: none;
+    }
+  }
+}
+// lg
+@media (min-width: 992px) {
+  .slider {
+    .slider__item--quotes .slider__bg {
+      left: 120px;
+      top: -45px;
+      width: 90px;
+    }
+    .slider__item--quotes .slider__quotes .slider__quotes__text {
+      font-size: 25px;
+    }
+    .slider__item--quotes .slider__quotes .slider__quotes__author {
+      font-size: 16px;
+    }
+    .slider__quotes__author .slider__quotes__author__name {
+      display: inline;
+    }
+  }
+}
+
+// xl => Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .container {
+    padding: 0 70px;
+  }
 }

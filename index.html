@@ -12,28 +12,58 @@
     />
 
     <title>Frontend Mentor | Coding Bootcamp Testimonials Slider</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="dist/style.css" />
   </head>
   <body>
     <section class="container">
-      <!-- <div class="bg curve"></div> pake css background-image aja -->
-
       <article class="slider">
-        <!-- display: grid-->
-        <div class="slider__item">
-          <img class="slider__bg slider__bg--pattern" />
-          <q class="slider__quotes"></q>
-          <p class="slider__author"></p>
-        </div>
-        <div class="slider__item">
-          <img class="slider__bg slider__bg--quotes" />
-          <figure class="slider__figure">
-            <img src="" alt="" />
-          </figure>
-          <div class="slider__controls">
-            <button class="slider__control__prev"></button
-            ><button class="slider__control__next"></button>
+        <div class="slider__item slider__item--quotes">
+          <div class="slider__quotes">
+            <img
+              class="slider__bg slider__bg--quotes"
+              src="src/images/pattern-quotes.svg"
+            />
+            <q class="slider__quotes__text">
+              If you want to lay the best foundation possible I'd recommend
+              taking this course. The depth the instructors go into is
+              incredible. I now feel so confident about starting up as a
+              professional developer.
+            </q>
+            <p class="slider__quotes__author">
+              <span class="slider__quotes__author__name">John Tarkpor</span>
+              <span class="slider__quotes__author__occupation"
+                >Junior Front-end Developer</span
+              >
+            </p>
           </div>
+        </div>
+
+        <div class="slider__item slider__item--figure">
+          <figure class="slider__figure">
+            <img
+              class="slider__bg slider__bg--figure"
+              src="src/images/pattern-bg.svg"
+            />
+            <div class="wrapper --relative">
+              <img
+                class="slider__figure__img"
+                src="src/images/image-john.jpg"
+                alt="author figure"
+              />
+              <div class="slider__controls">
+                <button
+                  class="slider__controls__btn slider__controls__btn--prev"
+                >
+                  <img src="src/images/icon-prev.svg" alt="" />
+                </button>
+                <button
+                  class="slider__controls__btn slider__controls__btn--next"
+                >
+                  <img src="src/images/icon-next.svg" alt="" />
+                </button>
+              </div>
+            </div>
+          </figure>
         </div>
       </article>
     </section>
