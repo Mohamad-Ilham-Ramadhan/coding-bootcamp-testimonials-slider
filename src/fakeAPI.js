@@ -6,6 +6,14 @@ const fakeDatabase = {
   users: [
     {
       id: uuid(),
+      image: imageIlham,
+      fullname: "Mohamad Ilham Ramadhan",
+      occupation: "Junior Front-end Developer",
+      testimonial:
+        "Saya sangat tertarik dalam dunia pemrograman sampai saya menentukan ingin menjadi front-end web developer. Kursus ini sangat membantu saya menggapai keinginan tersebut dengan penjelasan yang mudah dimengerti dan materi yang komprehensif. Sekarang saya bisa menjadi front-end web developer.",
+    },
+    {
+      id: uuid(),
       image: imageJohn,
       fullname: "John Tarkpor",
       occupation: "Junior Front-end Developer",
@@ -19,14 +27,6 @@ const fakeDatabase = {
       occupation: "UX Engineer",
       testimonial:
         "I've been interested in coding for a while but never taken the jump, until now. I couldn't recommend this course enough. I'm now in the job of my dreams and so exited about the future.",
-    },
-    {
-      id: uuid(),
-      image: imageIlham,
-      fullname: "Mohamad Ilham Ramadhan",
-      occupation: "Junior Front-end Developer",
-      testimonial:
-        "Saya sangat tertarik dalam dunia pemrograman sampai saya menentukan ingin menjadi front-end web developer. Kursus ini sangat membantu saya menggapai keinginan tersebut dengan penjelasan yang mudah dimengerti dan materi yang komprehensif. Sekarang saya bisa menjadi front-end web developer.",
     },
   ],
 };
