@@ -124,6 +124,9 @@ body {
     margin-top: 10px;
     position: relative;
   }
+  .slider__quotes .slider__quotes__text {
+    display: block;
+  }
   .slider__quotes__author {
     font-size: 17px;
   }
@@ -174,7 +177,6 @@ body {
     .slider__item--quotes .slider__quotes .slider__quotes__text {
       font-size: 18px;
       font-weight: 300;
-      display: block;
       line-height: 1.5;
       width: 115%;
     }
@@ -212,5 +214,79 @@ body {
 @media (min-width: 1200px) {
   .container {
     padding: 0 70px;
+  }
+}
+
+// Sliding Animation
+.figure-img-enter {
+  opacity: 0;
+  transform: translate(-50px, -35px);
+}
+.figure-img-enter-active {
+  opacity: 1;
+  transform: translate(0, 0);
+  transition: opacity, transform;
+  transition-duration: 300ms;
+  // transition-timing-function: cubic-bezier(0.03, 0.95, 0.39, 0.95);
+}
+.figure-img-exit {
+  opacity: 1;
+}
+.figure-img-exit-active {
+  opacity: 0;
+  transform: translate(50px, -35px);
+  transition: opacity, transform;
+  transition-duration: 300ms;
+  // transition-timing-function: cubic-bezier(0.03, 0.95, 0.39, 0.95);
+}
+
+// quotes
+.quotes-text-enter {
+  opacity: 0;
+  transform: translate(-50px, 0);
+}
+.quotes-text-enter-active {
+  opacity: 1;
+  transform: translate(0, 0);
+  transition: opacity, transform;
+  transition-duration: 300ms;
+  // transition-timing-function: cubic-bezier(0.03, 0.95, 0.39, 0.95);
+}
+.quotes-text-exit {
+  opacity: 1;
+}
+.quotes-text-exit-active {
+  opacity: 0;
+  transform: translate(-50px, 0);
+  transition: opacity, transform;
+  transition-duration: 300ms;
+  // transition-timing-function: cubic-bezier(0.03, 0.95, 0.39, 0.95);
+}
+
+.quotes-author-enter {
+  opacity: 0;
+  transform: translate(0, 35px);
+}
+.quotes-author-enter-active {
+  opacity: 1;
+  transform: translate(0, 0);
+  transition: opacity, transform;
+  transition-duration: 300ms;
+  // transition-timing-function: cubic-bezier(0.03, 0.95, 0.39, 0.95);
+}
+.quotes-author-exit {
+  opacity: 1;
+}
+.quotes-author-exit-active {
+  opacity: 0;
+  transform: translate(0, 35px);
+  transition: opacity, transform;
+  transition-duration: 300ms;
+  // transition-timing-function: cubic-bezier(0.03, 0.95, 0.39, 0.95);
+}
+
+@media all and (max-width: 768px) {
+  .quotes-text-exit-active {
+    transform: translate(50px, 0);
   }
 }

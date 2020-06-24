@@ -1,15 +1,13 @@
 import React, { useState, useEffect } from "react";
 import bgPattern from "../images/pattern-bg.svg";
 import bgQuotes from "../images/pattern-quotes.svg";
-import authorFigure from "../images/image-john.jpg";
 import iconNext from "../images/icon-next.svg";
 import iconPrev from "../images/icon-prev.svg";
 import { fakeDatabase as database } from "../fakeAPI";
-
+import { SwitchTransition, CSSTransition } from "react-transition-group";
 export default function App() {
   const [users, setUsers] = useState(null);
   const [sliderUser, setSliderUser] = useState(null);
-
   useEffect(() => {
     setUsers(database.users);
   }, []);
@@ -48,17 +46,35 @@ export default function App() {
         <div className="slider__item slider__item--quotes">
           <div className="slider__quotes">
             <img className="slider__bg slider__bg--quotes" src={bgQuotes} />
-            <q className="slider__quotes__text">
-              {sliderUser ? sliderUser.testimonial : ""}
-            </q>
-            <p className="slider__quotes__author">
-              <span className="slider__quotes__author__name">
-                {sliderUser ? sliderUser.fullname : "anonymous"}
-              </span>
-              <span className="slider__quotes__author__occupation">
-                {sliderUser ? sliderUser.occupation : "unknown"}
-              </span>
-            </p>
+            <SwitchTransition>
+              <CSSTransition
+                key={sliderUser != null ? sliderUser.testimonial : null}
+                unmountOnExit={true}
+                timeout={300}
+                classNames="quotes-text"
+              >
+                <q className="slider__quotes__text">
+                  {sliderUser ? sliderUser.testimonial : ""}
+                </q>
+              </CSSTransition>
+            </SwitchTransition>
+            <SwitchTransition>
+              <CSSTransition
+                key={sliderUser != null ? sliderUser.testimonial : null}
+                unmountOnExit={true}
+                timeout={300}
+                classNames="quotes-author"
+              >
+                <p className="slider__quotes__author">
+                  <span className="slider__quotes__author__name">
+                    {sliderUser ? sliderUser.fullname : "anonymous"}
+                  </span>
+                  <span className="slider__quotes__author__occupation">
+                    {sliderUser ? sliderUser.occupation : "unknown"}
+                  </span>
+                </p>
+              </CSSTransition>
+            </SwitchTransition>
           </div>
         </div>
 
@@ -66,14 +82,24 @@ export default function App() {
           <figure className="slider__figure">
             <img className="slider__bg slider__bg--figure" src={bgPattern} />
             <div className="slider__figure__wrapper">
-              <div
-                className="slider__figure__img"
-                style={{
-                  backgroundImage: `url('${
-                    sliderUser ? sliderUser.image : null
-                  }')`,
-                }}
-              ></div>
+              <SwitchTransition>
+                <CSSTransition
+                  key={sliderUser != null ? sliderUser.image : null}
+                  unmountOnExit={true}
+                  timeout={300}
+                  classNames="figure-img"
+                >
+                  <div
+                    className="slider__figure__img"
+                    style={{
+                      backgroundImage: `url('${
+                        sliderUser ? sliderUser.image : null
+                      }')`,
+                    }}
+                  ></div>
+                </CSSTransition>
+              </SwitchTransition>
+
               <div className="slider__controls">
                 <button
                   onClick={handlePrev}
