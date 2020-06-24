@@ -8,9 +8,21 @@ import { fakeDatabase as database } from "../fakeAPI";
 
 export default function App() {
   const [users, setUsers] = useState(null);
-  const [user, setUser] = useState(null);
+  const [sliderUser, setSliderUser] = useState(null);
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    setUsers(database.users);
+  }, []);
+
+  useEffect(() => {
+    if (users != null) {
+      setSliderUser(users[1]);
+    }
+  }, [users]);
+
+  function handleClick(e) {
+    alert("ilham ramadhan");
+  }
   return (
     <section className="container">
       <article className="slider">
@@ -18,15 +30,14 @@ export default function App() {
           <div className="slider__quotes">
             <img className="slider__bg slider__bg--quotes" src={bgQuotes} />
             <q className="slider__quotes__text">
-              If you want to lay the best foundation possible I'd recommend
-              taking this course. The depth the instructors go into is
-              incredible. I now feel so confident about starting up as a
-              professional developer.
+              {sliderUser ? sliderUser.testimonial : ""}
             </q>
             <p className="slider__quotes__author">
-              <span className="slider__quotes__author__name">John Tarkpor</span>
+              <span className="slider__quotes__author__name">
+                {sliderUser ? sliderUser.fullname : "anonymous"}
+              </span>
               <span className="slider__quotes__author__occupation">
-                Junior Front-end Developer
+                {sliderUser ? sliderUser.occupation : "unknown"}
               </span>
             </p>
           </div>
@@ -35,17 +46,26 @@ export default function App() {
         <div className="slider__item slider__item--figure">
           <figure className="slider__figure">
             <img className="slider__bg slider__bg--figure" src={bgPattern} />
-            <div className="wrapper --relative">
-              <img
+            <div className="slider__figure__wrapper">
+              <div
                 className="slider__figure__img"
-                src={authorFigure}
-                alt="author figure"
-              />
+                style={{
+                  backgroundImage: `url('${
+                    sliderUser ? sliderUser.image : null
+                  }')`,
+                }}
+              ></div>
               <div className="slider__controls">
-                <button className="slider__controls__btn slider__controls__btn--prev">
+                <button
+                  onClick={handleClick}
+                  className="slider__controls__btn slider__controls__btn--prev"
+                >
                   <img src={iconPrev} alt="" />
                 </button>
-                <button className="slider__controls__btn slider__controls__btn--next">
+                <button
+                  onClick={handleClick}
+                  className="slider__controls__btn slider__controls__btn--next"
+                >
                   <img src={iconNext} alt="" />
                 </button>
               </div>
