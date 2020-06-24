@@ -16,12 +16,31 @@ export default function App() {
 
   useEffect(() => {
     if (users != null) {
-      setSliderUser(users[1]);
+      setSliderUser(users[0]);
     }
   }, [users]);
 
-  function handleClick(e) {
-    alert("ilham ramadhan");
+  function handleNext(e) {
+    let nextUser;
+    let nextUserIndex =
+      users.indexOf(users.find((user) => user.id == sliderUser.id)) + 1;
+    if (nextUserIndex >= users.length) {
+      nextUserIndex = 0;
+      nextUser = users[nextUserIndex];
+    }
+    nextUser = users[nextUserIndex];
+    setSliderUser(nextUser);
+  }
+  function handlePrev(e) {
+    let prevUser;
+    let prevUserIndex =
+      users.indexOf(users.find((user) => user.id == sliderUser.id)) - 1;
+    if (prevUserIndex < 0) {
+      prevUserIndex = users.length - 1;
+      prevUser = users[prevUserIndex];
+    }
+    prevUser = users[prevUserIndex];
+    setSliderUser(prevUser);
   }
   return (
     <section className="container">
@@ -57,13 +76,13 @@ export default function App() {
               ></div>
               <div className="slider__controls">
                 <button
-                  onClick={handleClick}
+                  onClick={handlePrev}
                   className="slider__controls__btn slider__controls__btn--prev"
                 >
                   <img src={iconPrev} alt="" />
                 </button>
                 <button
-                  onClick={handleClick}
+                  onClick={handleNext}
                   className="slider__controls__btn slider__controls__btn--next"
                 >
                   <img src={iconNext} alt="" />
