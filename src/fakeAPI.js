@@ -6,14 +6,6 @@ const fakeDatabase = {
   users: [
     {
       id: uuid(),
-      image: imageIlham,
-      fullname: "Mohamad Ilham Ramadhan",
-      occupation: "Junior Front-end Developer",
-      testimonial:
-        "Saya xxx sangat tertarik dalam dunia pemrograman sampai saya menentukan ingin menjadi front-end web developer. Kursus ini sangat membantu saya menggapai keinginan tersebut dengan penjelasan yang mudah dimengerti dan materi yang komprehensif. Sekarang saya bisa menjadi front-end web developer.",
-    },
-    {
-      id: uuid(),
       image: imageJohn,
       fullname: "John Tarkpor",
       occupation: "Junior Front-end Developer",
