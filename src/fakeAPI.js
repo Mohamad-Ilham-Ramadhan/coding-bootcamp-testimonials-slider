@@ -10,7 +10,7 @@ const fakeDatabase = {
       fullname: "Mohamad Ilham Ramadhan",
       occupation: "Junior Front-end Developer",
       testimonial:
-        "Saya sangat tertarik dalam dunia pemrograman sampai saya menentukan ingin menjadi front-end web developer. Kursus ini sangat membantu saya menggapai keinginan tersebut dengan penjelasan yang mudah dimengerti dan materi yang komprehensif. Sekarang saya bisa menjadi front-end web developer.",
+        "Saya xxx sangat tertarik dalam dunia pemrograman sampai saya menentukan ingin menjadi front-end web developer. Kursus ini sangat membantu saya menggapai keinginan tersebut dengan penjelasan yang mudah dimengerti dan materi yang komprehensif. Sekarang saya bisa menjadi front-end web developer.",
     },
     {
       id: uuid(),
