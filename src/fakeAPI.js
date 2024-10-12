@@ -1,7 +1,9 @@
 import { v4 as uuid } from "uuid";
+
 import imageJohn from "./images/image-john.jpg";
 import imageTanya from "./images/image-tanya.jpg";
-import imageIlham from "./images/image-ilham.jpg";
+
+
 const fakeDatabase = {
   users: [
     {
